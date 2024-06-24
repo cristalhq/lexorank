@@ -2,6 +2,7 @@ package lexorank
 
 import (
 	"errors"
+	"fmt"
 	"strconv"
 )
 
@@ -59,9 +60,12 @@ func RankN(prev, next string, n int) ([]string, error) {
 		return nil, err
 	}
 
+	suffixRankLen := len(strconv.Itoa(n))
+	suffixRankFormat := fmt.Sprintf("%%0%dd", suffixRankLen)
+
 	res := make([]string, 0, n)
 	for i := 0; i < n; i++ {
-		res = append(res, idx+strconv.Itoa(i))
+		res = append(res, idx+fmt.Sprintf(suffixRankFormat, i))
 	}
 	return res, nil
 }
