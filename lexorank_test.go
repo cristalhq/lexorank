@@ -58,6 +58,7 @@ func TestRankN(t *testing.T) {
 		{"az", "b", 3, []string{"azU0", "azU1", "azU2"}, false},
 		{"a", "d", 2, []string{"b0", "b1"}, false},
 		{"a", "c", 4, []string{"b0", "b1", "b2", "b3"}, false},
+		{"0", "z", 20, []string{"U00", "U01", "U02", "U03", "U04", "U05", "U06", "U07", "U08", "U09", "U10", "U11", "U12", "U13", "U14", "U15", "U16", "U17", "U18", "U19"}, false},
 		{"a", "_", 4, []string{"b0", "b1", "b2", "b3"}, true},
 	}
 
